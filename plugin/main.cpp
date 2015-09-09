@@ -8,7 +8,7 @@ QT_BEGIN_NAMESPACE
 class QVkImPlatformInputContextPlugin : public QPlatformInputContextPlugin
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QPlatformInputContextFactoryInterface" FILE "vkim.json")
+    Q_PLUGIN_METADATA(IID QPlatformInputContextFactoryInterface_iid FILE "vkim.json")
 
 public:
     QVkImPlatformInputContext *create(const QString&, const QStringList&) Q_DECL_OVERRIDE;

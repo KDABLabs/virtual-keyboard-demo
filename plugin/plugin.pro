@@ -5,7 +5,7 @@ PLUGIN_EXTENDS = -
 PLUGIN_CLASS_NAME = QVkImPlatformInputContextPlugin
 load(qt_plugin)
 
-QT += dbus gui-private
+QT += dbus gui-private widgets
 SOURCES += $$PWD/qvkimplatforminputcontext.cpp \
            $$PWD/main.cpp
 

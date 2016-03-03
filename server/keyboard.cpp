@@ -99,8 +99,9 @@ Keyboard::Keyboard(QWidget *parent)
     }
 }
 
-void Keyboard::showKeyboard()
+void Keyboard::showKeyboard(int globalX, int globalY)
 {
+    QWidget::move(globalX, globalY);
     QWidget::show();
 }
 

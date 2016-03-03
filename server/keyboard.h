@@ -11,7 +11,7 @@ public:
     explicit Keyboard(QWidget *parent = Q_NULLPTR);
 
 public slots:
-    void showKeyboard();
+    void showKeyboard(int globalX, int globalY);
     void hideKeyboard();
     bool keyboardVisible() const;
 

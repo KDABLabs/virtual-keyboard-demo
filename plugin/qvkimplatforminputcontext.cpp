@@ -5,6 +5,7 @@
 #include <QDBusReply>
 #include <QGuiApplication>
 #include <QInputMethodEvent>
+#include <QWidget>
 
 QVkImPlatformInputContext::QVkImPlatformInputContext()
     : m_focusObject(0)
@@ -31,7 +32,13 @@ void QVkImPlatformInputContext::setFocusObject(QObject *object)
 
 void QVkImPlatformInputContext::showInputPanel()
 {
-    m_keyboardInterface->call("showKeyboard");
+    QPoint globalPos(0, 0);
+
+    QWidget *widget = qobject_cast<QWidget*>(m_focusObject);
+    if (widget)
+        globalPos = widget->mapToGlobal(QPoint(0, widget->height()));
+
+    m_keyboardInterface->call("showKeyboard", globalPos.x(), globalPos.y());
 }
 
 void QVkImPlatformInputContext::hideInputPanel()

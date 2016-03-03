@@ -70,7 +70,7 @@ static QString keyToCharacter(int key)
 Keyboard::Keyboard(QWidget *parent)
     : QWidget(parent)
 {
-    setWindowFlags(Qt::WindowDoesNotAcceptFocus | Qt::Tool | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+    setWindowFlags(Qt::WindowDoesNotAcceptFocus | Qt::Tool | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::BypassWindowManagerHint);
 
     QGridLayout *gridLayout = new QGridLayout(this);
 
